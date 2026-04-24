@@ -43,6 +43,9 @@ class OpenAiApiProvider implements UsageProvider {
   ProviderProfile? activeProfile = const ProviderProfile(name: 'Default');
 
   @override
+  Future<List<RawSession>> sessions({required DateTime since}) async => const [];
+
+  @override
   Future<bool> isAvailable() async =>
       (settings.secret(_secretKey)?.isNotEmpty ?? false);
 

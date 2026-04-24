@@ -34,6 +34,9 @@ class CopilotProvider implements UsageProvider {
   @override
   ProviderProfile? activeProfile = const ProviderProfile(name: 'Default');
 
+  @override
+  Future<List<RawSession>> sessions({required DateTime since}) async => const [];
+
   List<File> get _hostsFiles {
     if (!HomePaths.supportsLocalFileScanning) return const [];
     final home = HomePaths.home;

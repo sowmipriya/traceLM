@@ -17,10 +17,10 @@ class CostEstimate {
     int cacheRead = 0,
     int cacheWrite = 0,
   }) {
-    final inputCost = (input / 1_000_000) * inputPerMillion;
-    final outputCost = (output / 1_000_000) * outputPerMillion;
-    final cacheReadCost = (cacheRead / 1_000_000) * cacheReadPerMillion;
-    final cacheWriteCost = (cacheWrite / 1_000_000) * cacheWritePerMillion;
+    final inputCost = (input / 1000000) * inputPerMillion;
+    final outputCost = (output / 1000000) * outputPerMillion;
+    final cacheReadCost = (cacheRead / 1000000) * cacheReadPerMillion;
+    final cacheWriteCost = (cacheWrite / 1000000) * cacheWritePerMillion;
     return inputCost + outputCost + cacheReadCost + cacheWriteCost;
   }
 }

@@ -26,24 +26,14 @@ class TraceLMNotificationService {
     _initialized = true;
 
     const androidInit = AndroidInitializationSettings('@mipmap/ic_launcher');
-    const darwinInit = DarwinInitializationSettings(
-      requestAlertPermission: true,
-      requestBadgePermission: true,
-      requestSoundPermission: true,
-    );
+    const darwinInit = DarwinInitializationSettings();
     const linuxInit = LinuxInitializationSettings(defaultActionName: 'Open');
-    const windowsInit = WindowsInitializationSettings(
-      appName: 'TraceLM',
-      appUserModelId: 'com.tracelm.app',
-      guid: '4f3b0b5e-1a2e-4bb9-9e63-2c0df3d39a01',
-    );
 
     await _plugin.initialize(const InitializationSettings(
       android: androidInit,
       iOS: darwinInit,
       macOS: darwinInit,
       linux: linuxInit,
-      windows: windowsInit,
     ));
 
     // Darwin (macOS/iOS) explicitly requires a permission prompt.
@@ -131,7 +121,6 @@ class TraceLMNotificationService {
     const linuxDetails = LinuxNotificationDetails(
       urgency: LinuxNotificationUrgency.normal,
     );
-    const windowsDetails = WindowsNotificationDetails();
 
     await _plugin.show(
       DateTime.now().millisecondsSinceEpoch.remainder(1 << 31),
@@ -142,7 +131,6 @@ class TraceLMNotificationService {
         iOS: darwinDetails,
         macOS: darwinDetails,
         linux: linuxDetails,
-        windows: windowsDetails,
       ),
     );
   }
