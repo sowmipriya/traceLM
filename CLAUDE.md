@@ -31,9 +31,7 @@ flutter build ipa --release
 
 TraceLM is a Flutter cross-platform desktop app that monitors LLM usage
 across providers and fires native notifications on quota threshold
-crossings. The Swift reference implementation lives in
-`cirrondly-desk-community-master/` — treat it as spec, not source of
-truth. Our Dart code restructures its architecture.
+crossings.
 
 ### Layers
 
@@ -90,15 +88,17 @@ worst-window summary → notification service checks thresholds → exporter
 writes `~/.tracelm/usage.json`. The UI reads `UsageAggregator.snapshot`
 via `ref.watch(usageAggregatorProvider)`.
 
-### Things that are intentionally NOT ported from the Swift source
+### Intentional simplifications (not yet implemented)
 
-- **Native Keychain access.** Swift used `KeychainService` for OAuth
-  tokens; traceLM punts API-key storage to SharedPreferences. Drop-in
-  `flutter_secure_storage` if you need vault-backed storage.
+- **Native Keychain access.** API-key storage currently uses
+  SharedPreferences (plaintext on disk). Drop in `flutter_secure_storage`
+  if you need vault-backed storage.
 - **Live OAuth refresh for Codex / Claude subscription.** Both flows
-  depend on OS-specific keychains — we keep the local JSONL path only.
-- **SQLite reader for Codex `logs_2.sqlite`.** The Dart `sqflite_common_ffi`
-  path works on desktop but not iOS — omitted until needed.
+  depend on OS-specific keychains — traceLM keeps the local JSONL path
+  only.
+- **SQLite reader for Codex `logs_2.sqlite`.** The Dart
+  `sqflite_common_ffi` path works on desktop but not iOS — omitted
+  until needed.
 
 ### Platform notes that affect code
 

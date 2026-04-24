@@ -5,8 +5,6 @@ import '../models/raw_session.dart';
 import '../models/usage_window.dart';
 import '../utils/time_helpers.dart';
 
-/// Ported from CirrondlyDesk/Core/Services/BurnRateCalculator.swift
-///
 /// Heuristic window limits are inferred from the 90th percentile of rolling
 /// usage samples across the provided sessions. When the user has no declared
 /// limit (Claude subscription, free tier, etc.), this keeps a useful progress

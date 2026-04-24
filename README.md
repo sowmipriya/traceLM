@@ -5,11 +5,6 @@ tools you already use and nudges you before you blow through a quota or
 leave a session idling. It runs on **Windows**, **Ubuntu / Linux**,
 **macOS**, and **iOS** from a single Flutter codebase.
 
-> Inspired by [cirrondly-desk-community](./cirrondly-desk-community-master).
-> The Swift models, burn-rate math, and forecast logic were the starting
-> point — traceLM re-implements them in Dart and restructures the UI for
-> cross-platform desktop.
-
 ## What it does
 
 - **Tracks usage locally.** Reads `~/.claude/**`, `~/.codex/**`, Gemini CLI

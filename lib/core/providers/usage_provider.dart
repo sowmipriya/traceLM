@@ -2,7 +2,7 @@ import '../models/models.dart';
 
 /// Contract every usage source must honor. Keeps traceLM open to Claude Code,
 /// Codex, Cursor, Copilot, custom internal APIs — anything that can report
-/// tokens/requests. Ported from CirrondlyDesk's `UsageProvider` Swift protocol.
+/// tokens/requests.
 abstract class UsageProvider {
   String get identifier;
   String get displayName;

@@ -6,8 +6,6 @@ import '../models/models.dart';
 import '../utils/time_helpers.dart';
 import 'settings_service.dart';
 
-/// Ported from CirrondlyDesk/Core/Services/NotificationService.swift.
-///
 /// Drives the actual "you're exceeding / at X%" alerts that the user signed
 /// up for. Dedupes each (provider, window, threshold, resetAt) tuple so a
 /// single threshold crossing doesn't spam the user across poll cycles.

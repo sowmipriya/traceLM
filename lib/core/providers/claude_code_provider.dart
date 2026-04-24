@@ -11,7 +11,6 @@ import '../utils/time_helpers.dart';
 import 'usage_provider.dart';
 
 /// Reads Claude Code's local `~/.claude/projects/**/.jsonl` session files.
-/// Ported from CirrondlyDesk/Core/Providers/ClaudeCodeProvider.swift.
 class ClaudeCodeProvider implements UsageProvider {
   ClaudeCodeProvider(this.settings);
 

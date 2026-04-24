@@ -8,9 +8,8 @@ import '../utils/home_paths.dart';
 import '../utils/time_helpers.dart';
 import 'settings_service.dart';
 
-/// Mirrors CirrondlyDesk/Core/Services/StatusLineExporter.swift. Writes
-/// `~/.tracelm/usage.json` atomically so shell prompts, tmux, and the
-/// Claude Code `statusLine` script can read a stable file.
+/// Writes `~/.tracelm/usage.json` atomically so shell prompts, tmux, and
+/// the Claude Code `statusLine` script can read a stable file.
 class StatuslineExporter {
   StatuslineExporter(this.settings);
   final SettingsService settings;

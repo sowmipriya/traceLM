@@ -73,7 +73,7 @@ class _ServiceDescriptor {
 }
 
 /// Polls the public `statuspage.io`-style summary endpoints that each vendor
-/// publishes. Ported from CirrondlyDesk/Core/Services/ServiceStatusMonitor.swift.
+/// publishes.
 class ServiceStatusMonitor extends ChangeNotifier {
   ServiceStatusMonitor({http.Client? client})
       : _client = client ?? http.Client() {
