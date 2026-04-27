@@ -56,6 +56,11 @@ providers or mocking services in tests is trivial.
    `lib/core/services/service_status_monitor.dart` so health dots appear on
    the dashboard card.
 
+## install Flutter via brew:
+
+brew install flutter
+
+
 ## First-time setup
 
 This repo ships the Flutter `lib/`, `assets/`, `test/`, and `pubspec.yaml` —
@@ -63,7 +68,7 @@ the platform-specific scaffolds (`windows/`, `linux/`, `macos/`, `ios/`) are
 generated on demand so the repo stays small. Run once after cloning:
 
 ```bash
-flutter create --platforms=windows,linux,macos,ios --org com.tracelm .
+flutter create --platforms=[windows or linux or macos or ios] --org com.tracelm .
 flutter pub get
 ```
 
